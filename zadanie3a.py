@@ -8,8 +8,9 @@ def sortuj_przez_bombelki():
         for j in range(0, n-1-i):
             porownania +=1
             if dane[j] < dane[j+1]:
+                zmiany += 1
                 dane[j], dane[j+1] = dane[j+1], dane[j]
-                zmiany +=1
+
         print(dane)
     print(porownania, zmiany)
 if __name__ == '__main__':
