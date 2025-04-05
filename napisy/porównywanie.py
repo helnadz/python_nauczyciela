@@ -22,3 +22,6 @@ def porownaj_napisy(napis1,napis2):
         return najkrotsza
 if __name__ == '__main__':
     print(porownaj_napisy("Ala ma kota", "Ala ma kota i psa"))
+    print(porownaj_napisy("Ala ma kota", "ala ma kota"))
+    print(porownaj_napisy("Ala ma kota", "Ala ma kota"))
+    print(porownaj_napisy("Ala ma kota i psa", "Ala ma kota"))
