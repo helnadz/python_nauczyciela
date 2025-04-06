@@ -3,28 +3,36 @@
  #   alfabet+=(chr(i))
 #print(alfabet)
 
+import random
 
-alfabet = [chr(i) for i in range(ord('a'), ord('z') +1)]
-print(alfabet)
+alfabet = [chr(i) for i in range(ord('a'), ord('z') +1)]+ list("ąęćźżłńó")
+random.shuffle(alfabet)
 def szyfruj(napis,klucz):
     szyfr = [alfabet[(i+klucz)%len(alfabet)] for i in range(len(alfabet))]
     wynik =""
     for znak in napis:
-        if znak.islower():
-            indeks=ord(znak)-ord("a")
+        if znak in alfabet:
+            indeks=alfabet.index(znak)
             zaszyfrowany_znak=szyfr[indeks]
             wynik+=zaszyfrowany_znak
         else:
             wynik+=znak
     return wynik
-
-    print(szyfr)
 def odszyfruj(napis,klucz):
-    pass
+    szyfr = [alfabet[(i + klucz) % len(alfabet)] for i in range(len(alfabet))]
+    wynik = ""
+    for znak in napis:
+        if znak in alfabet:
+            indeks = szyfr.index(znak)
+            zaszyfrowany_znak = alfabet[indeks]
+            wynik += zaszyfrowany_znak
+        else:
+            wynik += znak
+    return wynik
 if __name__=='__main__':
-    napis = "ala ma kota"
+    napis = "ala ma żółć"
     klucz = 3
     zaszyfrowany_napis = szyfruj(napis,klucz)
     print(zaszyfrowany_napis)
-    odszyfrowany_napis = odszyfruj(napis,klucz)
+    odszyfrowany_napis = odszyfruj(zaszyfrowany_napis,klucz)
     print(odszyfrowany_napis)
