@@ -29,6 +29,7 @@ def odszyfruj(napis,klucz):
         else:
             wynik += znak
     return wynik
+
 if __name__=='__main__':
     napis = "ala ma żółć"
     klucz = 3
