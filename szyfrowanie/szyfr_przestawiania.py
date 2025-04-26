@@ -27,8 +27,17 @@ def odszyfruj(napis,klucz):
     pass
 
 
+def f(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return f(n-1)+f(n-2)
 if __name__=='__main__':
-    napis = "Ala_ma_kota"
+    print(f(40))
+
+    napis = "eax toćę ksbax khlwex, fhsmws"
     klucz = "pies"
 
     zaszyfrowany_napis = szyfruj(napis,klucz)

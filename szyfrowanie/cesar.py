@@ -5,7 +5,7 @@
 
 import random
 
-alfabet = [chr(i) for i in range(ord('a'), ord('z') +1)]+ list("ąęćźżłńó")
+alfabet = [chr(i) for i in range(ord('a'), ord('z') +1)]+ list("aąbcćdeęfghijklłmnopqrsśtuvwxyzźż")
 random.shuffle(alfabet)
 def szyfruj(napis,klucz):
     szyfr = [alfabet[(i+klucz)%len(alfabet)] for i in range(len(alfabet))]
@@ -31,7 +31,7 @@ def odszyfruj(napis,klucz):
     return wynik
 
 if __name__=='__main__':
-    napis = "ala ma żółć"
+    napis = "eax toćę ksbax khlwex, fhsmws"
     klucz = 3
     zaszyfrowany_napis = szyfruj(napis,klucz)
     print(zaszyfrowany_napis)
